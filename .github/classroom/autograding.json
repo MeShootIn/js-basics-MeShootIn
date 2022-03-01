@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Test",
+      "setup": "npm install",
+      "run": "npm test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": null
+    },
+    {
+      "name": "Lint",
+      "setup": "npm install",
+      "run": "npm run lint",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": null
+    }
+  ]
+}
