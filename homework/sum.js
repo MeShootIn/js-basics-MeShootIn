@@ -12,5 +12,21 @@
  * @returns а это уже сами решите
  */
 export default function sum(x) {
+  let s = 0;
 
+  const sumFunction = num => {
+    if (num === undefined) {
+      const result = s;
+
+      s = 0;
+
+      return result;
+    }
+
+    s += num;
+
+    return sumFunction;
+  };
+
+  return sumFunction(x);
 }

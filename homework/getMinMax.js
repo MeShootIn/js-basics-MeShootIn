@@ -17,5 +17,27 @@
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
 export default function getMinMax(input) {
+  const parsedInput = input
+    .split(' ')
+    .map(currentValue => Number.parseFloat(currentValue))
+    .filter(number => !Number.isNaN(number));
 
+  const chooser = (fn, a, b) => {
+    if (a === undefined) {
+      return b;
+    }
+
+    if (b === undefined) {
+      return a;
+    }
+
+    return fn(a, b);
+  };
+  const getMin = chooser.bind(null, Math.min);
+  const getMax = chooser.bind(null, Math.max);
+
+  return {
+    min: parsedInput.reduce((min, elem) => getMin(min, elem), undefined),
+    max: parsedInput.reduce((max, elem) => getMax(max, elem), undefined)
+  };
 }

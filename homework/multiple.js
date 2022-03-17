@@ -15,5 +15,29 @@
  */
 
 export default function multiple(a, b) {
+  let result = 0;
 
+  if (!Number.isFinite(a) || !Number.isFinite(b)) {
+    if (a === 0 || b === 0) {
+      return NaN;
+    }
+
+    result = Infinity;
+  } else {
+    for (let i = 0; i < Math.abs(b); ++i) {
+      result += Math.abs(a);
+    }
+  }
+
+  const mySign = x => (1 / x > 0 ? +1 : -1);
+
+  if (mySign(a) === -1) {
+    result = -result;
+  }
+
+  if (mySign(b) === -1) {
+    result = -result;
+  }
+
+  return result;
 }

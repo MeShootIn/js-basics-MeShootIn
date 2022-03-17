@@ -20,5 +20,11 @@
  * @return {boolean}
  */
 export default function passwordCheck(password) {
-
+  return [
+    /\d/g,
+    /[a-z]/g,
+    /[A-Z]/g,
+    /[!?.,+\-*/=]/g,
+    /^.{10,}/g
+  ].reduce((isValid, regex) => isValid && regex.test(password), true);
 }

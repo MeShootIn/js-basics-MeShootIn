@@ -15,5 +15,5 @@
  * @return {string}
  */
 export default function capitalize(input) {
-
+  return input.replace(/(^|\s)\S/g, s => s.toUpperCase());
 }
