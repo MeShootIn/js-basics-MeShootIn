@@ -20,22 +20,14 @@
 export default function retrier(fn, retries) {
   let r = 0;
 
-  const attempt = () => {
+  while (r < retries) {
     try {
       r += 1;
       fn();
+
+      break;
     } catch (e) {
       if (r >= retries) { throw e; }
-
-      return false;
-    }
-
-    return true;
-  };
-
-  while (r < retries) {
-    if (attempt()) {
-      break;
     }
   }
 }

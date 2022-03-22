@@ -29,13 +29,13 @@ export default function multiple(a, b) {
     }
   }
 
-  const mySign = x => (1 / x > 0 ? +1 : -1);
+  const nonZeroSign = x => (1 / x > 0 ? +1 : -1);
 
-  if (mySign(a) === -1) {
+  if (nonZeroSign(a) === -1) {
     result = -result;
   }
 
-  if (mySign(b) === -1) {
+  if (nonZeroSign(b) === -1) {
     result = -result;
   }
 

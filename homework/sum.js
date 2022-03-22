@@ -15,7 +15,7 @@ export default function sum(x) {
   let s = 0;
 
   const sumFunction = num => {
-    if (num === undefined) {
+    if (typeof num === 'undefined') {
       const result = s;
 
       s = 0;

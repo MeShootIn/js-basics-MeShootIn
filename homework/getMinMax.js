@@ -23,11 +23,11 @@ export default function getMinMax(input) {
     .filter(number => !Number.isNaN(number));
 
   const chooser = (fn, a, b) => {
-    if (a === undefined) {
+    if (typeof a === 'undefined') {
       return b;
     }
 
-    if (b === undefined) {
+    if (typeof b === 'undefined') {
       return a;
     }
 
